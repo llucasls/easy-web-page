@@ -1,15 +1,14 @@
 #!/usr/bin/env python
 import sys
 from markdown import Markdown
+from subprocess import check_output
 
 
 try:
     input_file = sys.argv[1]
 except IndexError:
-    print("Error: input not found", file=sys.stderr)
-    print("this script takes two arguments, and at least one is required",
-          file=sys.stderr)
-    sys.exit(1)
+    input_file = input("please state the name of the input file: ")
+    print("\n")
 
 
 try:
